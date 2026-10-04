@@ -25,6 +25,13 @@ training_data = data[:455] # First 455 samples for training
 X_train = training_data[:, :-1]
 Y_train = training_data[:, -1:] 
 
+# Standardize data by calculating the mean and average of the training data 
+mean = np.mean(X_train, axis=0)
+std = np.std(X_train, axis=0)
+
+X_train = (X_train - mean) / std
+X_test = (X_test - mean) / std
+
 # Neural Network Calculations and Implementation 
 
 # Initialize all the parameters 
