@@ -1,10 +1,9 @@
 from sklearn.datasets import load_breast_cancer
 import numpy as np 
 import pandas as pd 
-from matplotlib import pyplot as plt 
 
-# source sklearn-env/bin/activate  ## Comamand to activate the virtual environment 
-# source ./sklearn-env/bin/python main.py  ## Command to run the program in the virtual environment
+# command to activate the virtual environment: source neuralnet/sklearn-env/bin/activate
+# Command to run the code in the venv: python neuralnet/main.py 
 
 # Import dataset 
 dataset = load_breast_cancer()
@@ -35,6 +34,9 @@ def init_params():
     b1 = np.random.rand(1, 8) - 0.5
     W2 = np.random.rand(8, 1) - 0.5
     b2 = np.random.rand(1, 1) - 0.5
+
+    print("Starting W1:", W1[0, 0]) 
+
     return W1, b1, W2, b2
 
 # Define the ReLU activation function
